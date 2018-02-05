@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<form action="#" th:action="@{/add}" th:object="${pet}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Age: <input type="text" th:field="*{age}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+<hr/>
+<table>
+    <tbody>
+    <tr th:each="pet: ${petList}">
+        <td th:text="${pet.name}"></td>
+        <td th:text="${pet.age}"></td>
+        <td><a th:href="${'/delete/' + pet.id}">Delete</a> </td>
+        <td><a th:href="${'/update/' + pet.id}">Update</a> </td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
