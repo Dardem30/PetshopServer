@@ -9,15 +9,6 @@ import javax.servlet.http.HttpServletResponse;
  * Interceptor for handling access control headers.
  */
 public class AccessControlHeaderInterceptor extends HandlerInterceptorAdapter {
-
-    /**
-     * Method where Access Control headers are set.
-     * @param request http request
-     * @param response http response
-     * @param handler handler
-     * @return call to super
-     * @throws Exception thrown if something goes wrong
-     */
     @Override
     public boolean preHandle(final HttpServletRequest request,
                              final HttpServletResponse response,

@@ -1,5 +1,6 @@
 package com.petshop.petshop.model;
 
+import com.petshop.petshop.model.security.model.User;
 import lombok.Data;
 import lombok.Setter;
 
@@ -20,4 +21,6 @@ public class Pet {
     @Basic
     @Column(name = "age")
     private int age;
+   @Column(name = "user_id")
+   private Integer userId;
 }

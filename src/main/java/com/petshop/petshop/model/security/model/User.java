@@ -1,5 +1,6 @@
 package com.petshop.petshop.model.security.model;
 
+import com.petshop.petshop.model.Pet;
 import lombok.Data;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -31,6 +32,10 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Authority> authorities;
+
+    @OneToMany
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private List<Pet> pets;
 
     @Column(name = "account_non_expired")
     private boolean accountNonExpired;
