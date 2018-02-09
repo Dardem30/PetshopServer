@@ -1,6 +1,7 @@
 package com.petshop.petshop.security.service;
 
 
+import com.petshop.petshop.model.Pet;
 import com.petshop.petshop.model.security.model.User;
 
 import java.util.List;
@@ -55,4 +56,5 @@ public interface UserService {
      * @return List of User user.
      */
     List<User> listUsers();
+    List<Pet> listPetsOfUser(User user);
 }

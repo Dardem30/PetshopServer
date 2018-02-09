@@ -1,5 +1,6 @@
 package com.petshop.petshop.security.service;
 
+import com.petshop.petshop.model.Pet;
 import com.petshop.petshop.model.security.model.Authority;
 import com.petshop.petshop.model.security.model.AuthorityType;
 import com.petshop.petshop.model.security.model.User;
@@ -86,5 +87,10 @@ public class DefaultUserService implements UserService {
         log.info("All users displayed");
 
         return userRepository.findAll();
+    }
+
+    @Override
+    public List<Pet> listPetsOfUser(User user) {
+        return user.getPets();
     }
 }
